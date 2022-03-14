@@ -538,7 +538,7 @@ function renderWatermark(page, pdfKitDoc) {
 
 	// update position to right-middle
 	var x = pdfKitDoc.page.width / 2 - watermark._size.size.width / 2;
-	var y = pdfKitDoc.page.width + watermark._size.size.height;
+	var y = pdfKitDoc.page.width + pdfKitDoc.page.margins.right;
 
 	pdfKitDoc._font = watermark.font;
 	pdfKitDoc.fontSize(watermark.fontSize);
