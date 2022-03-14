@@ -536,8 +536,9 @@ function renderWatermark(page, pdfKitDoc) {
 
 	pdfKitDoc.rotate(watermark.angle, { origin: [pdfKitDoc.page.width / 2, pdfKitDoc.page.height / 2] });
 
+	// update position to right-middle
 	var x = pdfKitDoc.page.width / 2 - watermark._size.size.width / 2;
-	var y = pdfKitDoc.page.height / 2 - watermark._size.size.height / 2;
+	var y = pdfKitDoc.page.width + watermark._size.size.height;
 
 	pdfKitDoc._font = watermark.font;
 	pdfKitDoc.fontSize(watermark.fontSize);
